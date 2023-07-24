@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- locals.title %></title>
+    <meta name="description" content="<%- locals.description %>">
+    
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="">
+    <%- include('../partials/header.ejs') %>
+    <%- body %>
+    <%- include('../partials/footer.ejs') %>
+    
+</body>
+</html>
+
+
+<!-- ye ek ejs file hai isme html+js code saath mai likh pate hai basically dynamic page generate krne ke liye
+ejs file ka use krte hai ye basically ek template hai iske through konse url pr kya dikhana hai vo handle kr rhe hai yha pr humne include ke through file ko import kra hai jo ki partils directory ke header and footer files hai nd body ka content bhi dynamically jis type ka request hai nd usme jo file call kr rhe hai uska content iske body mai dal kr uss url pr dikhega -->

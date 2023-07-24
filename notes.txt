@@ -1,0 +1,39 @@
+.use() ko basically 4 trh se use kr skte hai 
+
+1. static file hosting ke liye - static file ko client side mai daal diya jata hai pehle baar mai to properly saare call hoke static file load ho kr client ko milta hai but issi baar mai client side mai ye static file store kr dete such that agr dobara client iske liye request kre to server se na ja kr usko vahi se de diya jaye 
+app.use(express.static('public'));
+
+2. meddleware ko invoke krne ke liye koi method aapne bnaya bnaya then usko kisi particular path url pr invoke krna hua ya globally invoke krna hua to uske liye use kr skte 
+const logger = (req, res, next) => {
+  console.log(`Logged ${req.url} - ${req.method} -- ${new Date()}`);
+  next(); // middleware chain continue
+};
+
+// use middleware function
+app.use(logger);
+
+globally use kr rhe hai
+
+3. agr kisi particular url pr req,res ko handle krna hua manipulate krna hua ya kuch bhi krna hua uske liye 
+ use() method kr through hum kisi bhi http method ko handle kr skte hai globally bhi aur kisi particular url pr bhi
+ routing vgera set kr skte hai jaise globally use() method lgaya path daal di nd then vaha pr acc to url route alag alag method se usko handle kr diya
+
+4. Error vgera handle kr skte hai .use() method se
+
+Hota kya hai ki jaise koi bhi request hai to uske execution ka sequence kuch iss trh hai----
+sbse pehle request initiate hua then vo request server pr gya phir then phir middleware handling hoga jiske through data generation error handling authentication vgera kr skte hai phir routing ke through kya url hai aur uss pr kya route hai vo hoga then response generation hoga and then response send ye hota hai web dev mai ek req ka pura sequence execution ka
+
+ab .use() method mai ek hi url pr mutiple files ya methods lga skte hai and kisi bhi type ka request handle kr skte hai isse middleware ko handle kr rhe hai aur ye bhi keh skte hai ki middleware ko application ke request proces pipeline mai daalte hai jo baad mai request aane pr execute hoti hai
+
+middleware ko mount krna mtlb set krna lgana ab usko kisi bhi path ke liye ya hr path ke liye apne hisab se lga skte issi ko mounting kehte hai 
+
+
+
+Q2. .use() vs .get()
+
+ ab dekh uper hi dekha hai ki .use() mai kisi bhi http method ko handle kr skte hai but .get() mai only get method mai get mai request handle hui and later response send jbki use mai response send ke saath saath aur bhi bht kuch kr skte hai
+
+
+Q3 middleware hr vo chij hai jo request ke aane ke baad aur response send hine se pehle execute ho rhi hai
+
+

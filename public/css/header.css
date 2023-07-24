@@ -1,0 +1,85 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* #navfs a {
+    margin: .5rem 1rem;
+    padding: .5rem;
+    display: inline-block;
+    font-size: 3.9rem;
+    font-weight: bold;
+}
+
+#navfs a:hover {
+    background-color: #12296c;
+    color: white;
+    border-radius: 2.8rem;
+} */
+
+#img-size{
+    width: 18rem;
+    height: 5.5rem;
+}
+
+#navbw a {
+    margin: .7rem 1.8rem;
+    padding: .5rem;
+    font-size: 2.8rem;
+}
+
+#navbw a:hover {
+    background-color: #12296c;
+    color: white;
+    border-radius: 2rem;
+}
+
+#navls a {
+    margin: .7rem .5rem;
+    padding: 0.3rem 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+#navls a {
+    background-color: #12296c;
+    color: white;
+}
+
+#navls a:hover {
+    background-color: #2a48a3;
+}
+
+.inputtag {
+    width: 50rem;
+}
+
+.inputtag:focus{
+    background-color: #12296c;
+    color: white;
+}
+
+.inputtag:focus::placeholder{
+    color: aliceblue;
+}
+
+/* .navbar input[type="text"]:focus {
+    background-color: #12296c;
+    color: white;
+} */
