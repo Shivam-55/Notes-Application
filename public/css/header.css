@@ -50,6 +50,16 @@ li a {
     border-radius: 2rem;
 }
 
+#navbw input {
+    margin: .7rem 1.8rem;
+    padding: .5rem;
+    font-size: 1.8rem;
+    background-color: #12296c;
+    color: white;
+    width: 50rem;
+    /* border-radius: 2rem; */
+}
+
 #navls a {
     margin: .7rem .5rem;
     padding: 0.3rem 1.2rem;
@@ -66,7 +76,7 @@ li a {
     background-color: #2a48a3;
 }
 
-.inputtag {
+/* .inputtag {
     width: 50rem;
 }
 
@@ -79,7 +89,7 @@ li a {
     color: aliceblue;
 }
 
-/* .navbar input[type="text"]:focus {
+.navbar input[type="text"]:focus {
     background-color: #12296c;
     color: white;
 } */

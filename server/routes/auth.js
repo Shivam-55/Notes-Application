@@ -75,11 +75,24 @@ passport.serializeUser((user, done) => {
 
 
 // retrieve user data from session
+
+// passport.deserializeUser((id, done) => {
+//     User.findById(id, (err, user) => {
+//         done(err, user);
+//     })
+// })
+
 passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-        done(err, user);
-    })
-})
+    User.findById(id)
+      .then(user => {
+        done(null, user); // Pass the user to the done callback
+      })
+      .catch(err => {
+        done(err, null); // Pass the error to the done callback
+      });
+  });
+
+  
 // deserialize se user ke id se session mai ya db mai jo user ke data ko save kiya tha usko acces krte hai ya keh lo find krte hai isme id ko pass krte hai with fn done, done ka use signal dene ke liye krte hai deserializeuser process complete hua ya nhi and issme .findbyid method ka use krte hai jisme id aur ek callback fn jisme err aur user ko pass krte hai agr find ho gya tb to done ko as a second argument send krte hai jisme first argument null rehta hai but agr koi error/fail ho jata hai to done ko as first argument bhej dete hai
 
 module.exports = router; 

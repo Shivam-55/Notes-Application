@@ -1,3 +1,7 @@
+// const Notes = require('../models/Notes');
+// const mongoose =  require('mongoose');
+
+
 exports.dashboard = async(req,res) => {
     const locals={
         title:'Nodejs Notes',
